@@ -10,5 +10,6 @@
  */
 define ('ROOT_PATH', dirname (__FILE__));
 require_once 'libraries/unirest-php/Unirest.php';
+require_once 'libraries/ensure.php';
 require_once 'core/Contentful.php';
 

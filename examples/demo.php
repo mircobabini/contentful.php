@@ -20,3 +20,5 @@ $client->entry ('nyancat', 'cfexampleapi');
 
 $client->assets ('cfexampleapi');
 $client->asset ('nyancat', 'cfexampleapi');
+
+
