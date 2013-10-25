@@ -1,7 +1,7 @@
 <?php namespace Contentful; // just for ease
 
-// remove the ../ if you are out from the examples directory
-require_once '../contentful.php';
+// require the lib
+require_once dirname (__FILE__) . '/../contentful.php';
 
 // demo token from the official docs
 $ACCESS_TOKEN = 'b4c0n73n7fu1';
