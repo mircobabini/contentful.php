@@ -43,38 +43,38 @@ class Client {
 	}
 	
 	
-	public function space ($space_name) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_name}");
+	public function space ($id) {
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$id}");
 		
 		return $r->body;
 	}
-	public function contentTypes ($space_name) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_name}/content_types");
+	public function contentTypes ($space_id) {
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/content_types");
 		
 		return $r->body;
 	}
-	public function contentType ($id, $space_name) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_name}/content_types/{$id}");
+	public function contentType ($id, $space_id) {
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/content_types/{$id}");
 		
 		return $r->body;
 	}
-	public function entries ($space_name) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_name}/entries");
+	public function entries ($space_id) {
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/entries");
 		
 		return $r->body;
 	}
-	public function entry ($id, $space_name) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_name}/entries/{$id}");
+	public function entry ($id, $space_id) {
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/entries/{$id}");
 		
 		return $r->body;
 	}
-	public function assets ($space_name) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_name}/assets");
+	public function assets ($space_id) {
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/assets");
 		
 		return $r->body;
 	}
-	public function asset ($id, $space_name) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_name}/assets/{$id}");
+	public function asset ($id, $space_id) {
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/assets/{$id}");
 		
 		return $r->body;
 	}
