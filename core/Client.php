@@ -1,4 +1,5 @@
 <?php namespace Contentful;
+
 class Client {
 	/**
 	 * @var array

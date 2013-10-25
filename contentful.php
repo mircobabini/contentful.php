@@ -9,6 +9,6 @@
  * 0.0.10
  */
 define ('ROOT_PATH', dirname (__FILE__));
-require_once ROOT_PATH . '/libraries/unirest-php/Unirest.php';
-require_once ROOT_PATH . '/core/Contentful.php';
+require_once 'libraries/unirest-php/Unirest.php';
+require_once 'core/Contentful.php';
 
