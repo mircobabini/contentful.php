@@ -4,11 +4,11 @@ class Client {
 	/**
 	 * @var array
 	 */
-	private static $clients = array ();
+	protected static $clients = array ();
 	/**
 	 * @var Client
 	 */
-	private static $active_client;
+	protected static $active_client;
 	
 	/**
 	 * @param string $access_token
@@ -33,9 +33,9 @@ class Client {
 	/**
 	 * @var string
 	 */
-	private $access_token;
+	protected $access_token;
 
-	private function __construct ($access_token) {
+	protected function __construct ($access_token) {
 		$this->access_token = $access_token;
 	}
 	public function access_token () {
