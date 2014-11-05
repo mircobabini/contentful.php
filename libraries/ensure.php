@@ -1,4 +1,4 @@
-<?
+<?php
 /*!
  * Ensure Test Suite
  *
