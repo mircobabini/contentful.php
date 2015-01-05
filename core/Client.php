@@ -48,35 +48,52 @@ class Client {
 		
 		return $r->body;
 	}
-	public function contentTypes ($space_id) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/content_types");
+	public function contentTypes ($space_id, $params = '') {
+		$params = $this -> buildparams($params);
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/content_types{$params}");
 		
 		return $r->body;
 	}
-	public function contentType ($id, $space_id) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/content_types/{$id}");
+	public function contentType ($id, $space_id, $params = '') {
+		$params = $this -> buildparams($params);
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/content_types/{$id}{$params}");
 		
 		return $r->body;
 	}
-	public function entries ($space_id) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/entries");
+	public function entries ($space_id, $params = '') {
+		$params = $this -> buildparams($params);
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/entries{$params}");
 		
 		return $r->body;
 	}
-	public function entry ($id, $space_id) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/entries/{$id}");
+	public function entry ($id, $space_id, $params = '') {
+		$params = $this -> buildparams($params);
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/entries/{$id}{$params}");
 		
 		return $r->body;
 	}
-	public function assets ($space_id) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/assets");
+	public function assets ($space_id, $params = '') {
+		$params = $this -> buildparams($params);
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/assets{$params}");
 		
 		return $r->body;
 	}
-	public function asset ($id, $space_id) {
-		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/assets/{$id}");
+	public function asset ($id, $space_id, $params = '') {
+		$params = $this -> buildparams($params);
+		$r = Unirest::get ("https://cdn.contentful.com/spaces/{$space_id}/assets/{$id}{$params}");
 		
 		return $r->body;
+	}
+	private function buildparams($params) {
+		if(empty($params)) return '';
+		
+		if(is_array($params)) {
+			foreach($params as $key=>$value) {
+				$p_array[] = urlencode($key) . "=" . urlencode($value);
+			}
+			$result = implode("&",$p_array);
+		} else $result = $params;
+		return '?'.$result;
 	}
 	
 }
