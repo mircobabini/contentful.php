@@ -21,3 +21,11 @@ $entry = $client->entry ('nyancat', 'cfexampleapi');
 $assets = $client->assets ('cfexampleapi');
 $asset = $client->asset ('nyancat', 'cfexampleapi');
 
+//Using params
+
+$entries = $client->entries ('cfexampleapi', 'skip=2&limit=2'); //params as a string
+
+$params['skip'] 	= 2;
+$params['limit'] 	= 2;
+$params['content_type'] 	= 'cat';
+$entries = $client->entries ('cfexampleapi', $params); //params as array
